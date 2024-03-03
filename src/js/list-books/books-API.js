@@ -1,48 +1,34 @@
-import axios from 'axios';
+import axios from "axios";
+import { renderTopBooks, renderCategoriesList, renderBooksByCategory } from './render-categories.js';
 
 const BASE_URL = 'https://books-backend.p.goit.global';
 
-export async function getCategoryList() {
-  try {
-    const response = await axios.get(`${BASE_URL}/books/category-list`);
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching category list:', error);
-    throw error;
-  }
-}
+const fetchData = async (endpoint, params = null) => {
+  const fetchUrl = `${BASE_URL}/books${endpoint}`;
 
-export async function getTopBooks() {
   try {
-    const response = await axios.get(`${BASE_URL}/books/top-books`);
+    const response = await axios.get(fetchUrl, { params });
     return response.data;
   } catch (error) {
-    console.error('Error fetching top books:', error);
-    throw error;
+    console.log(error);
   }
-}
+};
 
-export async function getBooksByCategory(selectedCategory) {
-  try {
-    const response = await axios.get(
-      `${BASE_URL}/books/category?category=${selectedCategory}`
-    );
-    return response.data;
-  } catch (error) {
-    console.error(
-      `Error fetching books for category ${selectedCategory}:`,
-      error
-    );
-    throw error;
-  }
-}
+export const getTopBooks = async (booksPerRow) => {
+  const data = await fetchData('/top-books/');
+  return renderTopBooks(data, booksPerRow);
+};
 
-export async function getBookInfo(bookId) {
-  try {
-    const response = await axios.get(`${BASE_URL}/books/${bookId}`);
-    return response.data;
-  } catch (error) {
-    console.error(`Error fetching details for book ID ${bookId}:`, error);
-    throw error;
-  }
-}
+export const getCategoryList = async () => {
+  const data = await fetchData('/category-list/');
+  return renderCategoriesList(data);
+};
+
+export const getBooksByCategory = async (categoryName) => {
+  const data = await fetchData('/category/', { category: categoryName });
+  return renderBooksByCategory(data, categoryName);
+};
+
+export const getBookInfo = async (id) => {
+  return fetchData(`/${id}`);
+};
