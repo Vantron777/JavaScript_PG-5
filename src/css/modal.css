@@ -18,6 +18,48 @@ body.show-modal .backdrop {
   overflow: auto;
 }
 
+.modal-icons {
+  filter: grayscale(100%);
+  align-items: center;
+}
+
+.modal-icons:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.dark.amazon-icon {
+  filter: brightness(0) invert(1);
+}
+
+.dark.appbooks-icon {
+  filter: grayscale(100%);
+}
+
+.dark.modal-icons:hover {
+  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
+.dark.close-btn {
+  stroke: #fff;
+  background-color: #000;
+}
+
+.dark.modal-message {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark.modal-title {
+  color: #fff;
+}
+
+.dark.modal-description {
+  color: #fff;
+}
+
+.dark.modal-author {
+  color: #b4afaf;
+}
+
 @media (min-width: 375px) {
   .container {
     max-width: 375px;
@@ -41,26 +83,14 @@ body.show-modal .backdrop {
     margin: 70px 15px 30px;
     padding: 40px 25px;
   }
-  /* .modal-content {
-    width: 287px;
-    gap: 24px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 100%;
-  } */
+
   .modal-img {
     width: 287px;
     object-fit: contain;
     border-radius: 8px;
   }
-  .modal-info {
-  }
   .modal-title {
-    font-family: 'DM Sans', sans-serif;
     font-weight: 700;
-    font-size: 16px;
     line-height: 1.12;
     letter-spacing: -0.04em;
     color: #111;
@@ -68,9 +98,7 @@ body.show-modal .backdrop {
     margin-top: 14px;
   }
   .modal-author {
-    font-family: 'DM Sans', sans-serif;
     font-style: italic;
-    font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: -0.04em;
@@ -78,8 +106,6 @@ body.show-modal .backdrop {
     margin-top: 4px;
   }
   .modal-description {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: -0.04em;
@@ -96,13 +122,7 @@ body.show-modal .backdrop {
     display: flex;
     margin-top: 14px;
   }
-  .modal-icons {
-    filter: grayscale();
-    align-items: center;
-  }
 
-  .marketplace-list-item {
-  }
   .modal-buttons {
     flex-wrap: wrap;
     justify-content: center;
@@ -138,8 +158,6 @@ body.show-modal .backdrop {
   }
 
   .modal-message {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
     font-size: 10px;
     line-height: 1.2;
     letter-spacing: -0.04em;
@@ -157,7 +175,6 @@ body.show-modal .backdrop {
   }
 
   .modal-close-btn {
-    fill: #111;
     cursor: pointer;
     background-color: #fff;
     border: none;
@@ -199,19 +216,12 @@ body.show-modal .backdrop {
     width: 192px;
     height: 281px;
   }
-  .modal-info {
-  }
-  .modal-title {
-  }
-  .modal-author {
-  }
+
   .modal-description {
     width: 279px;
     height: 70px;
   }
 
-  .marketplace-list-item {
-  }
   .modal-buttons {
     display: flex;
     align-items: center;
@@ -247,6 +257,12 @@ body.show-modal .backdrop {
 }
 .close-btn {
   stroke: #000;
+  background-color: #fff;
+}
+
+.dark.close-btn {
+  stroke: #fff;
+  background-color: #000;
 }
 
 .hidden {
