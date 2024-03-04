@@ -36,6 +36,10 @@ img {
 ul {
   list-style-type: none;
 }
+/* =================Styles shopping list with books============================= */
+.shoppinglist-list{
+
+}
 
 .shoppinglist-book {
   display: flex;
@@ -44,10 +48,19 @@ ul {
   border-radius: 16px;
   padding: 30px 24px;
   width: 996px;
-
   background-color: #fff;
 }
 
+.shoppinglist-book-image {
+  width: 116px;
+  height: 165px;
+  border-radius: 8px;
+}
+.shoppinglist-total-div{
+  display: flex;
+  flex-direction: column;
+  width: 854px;
+}
 .shoppinglist-tb-div {
   display: flex;
   align-items: last baseline;
@@ -60,47 +73,6 @@ ul {
   flex-direction: column;
   gap: 4px;
 }
-
-.shoppinglist-total-div {
-  display: flex;
-  flex-direction: column;
-  width: 854px;
-}
-
-.shoppinglist-low-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.shoppinglist-book-low-ul {
-  display: flex;
-  gap: 16px;
-  height: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.shoppinglist-desauthorlink {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 110px;
-}
-.shoppinglist-book-image {
-  width: 116px;
-  height: 165px;
-  border-radius: 8px;
-}
-
-.shoppinglist-book-deletebutton {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: none;
-  background-image: url("../img/dump.png");
-}
-
 .shoppinglist-book-title {
   font-family: "DM Sans", sans-serif;
   font-weight: 700;
@@ -110,7 +82,6 @@ ul {
   text-transform: uppercase;
   color: #111;
 }
-
 .shoppinglist-book-category {
   font-family: "DM Sans", sans-serif;
   font-style: italic;
@@ -121,6 +92,21 @@ ul {
   color: #b4afaf;
 }
 
+.shoppinglist-book-deletebutton {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #4f2ee8;
+}
+.shoppinglist-btn-svg{
+}
+.shoppinglist-desauthorlink {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 110px;
+}
 .shoppinglist-book-description {
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
@@ -130,6 +116,11 @@ ul {
   color: #111;
 }
 
+.shoppinglist-low-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .shoppinglist-book-author {
   font-family: "DM Sans", sans-serif;
   font-style: italic;
@@ -139,14 +130,36 @@ ul {
   letter-spacing: -0.04em;
   color: #b4afaf;
 }
+.shoppinglist-book-low-ul {
+  display: flex;
+  gap: 16px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.shoppinglist-book-low-li-amazon{
 
-.shoppinglist-book-button-img {
+}
+.shopping-amazon-link{
+
+}
+.shopping-listamazon-img{
+
+}
+.shoppinglist-book-low-li-apple{
+
+}
+.shopping-apple-img {
+
+} 
+
+/* .shoppinglist-book-button-img {
   width: 34px;
   height: 34px;
-}
+} */
 
 /* ==============Shoping-list empty======================== */
-body{
+/* body{
     background-color: #f6f6f6;
     box-sizing: border-box;
   }
@@ -166,14 +179,13 @@ body{
     display: block;
     max-width: 100%;
     height: auto;
-  }
+  } */
   
   /* ===============Styles shopping-list empty============================ */
-    .container {
+    /* .container {
       max-width: 375px;
       margin: 0 auto;
       padding: 40px 20px 80px;
-      
     }
   
     .shopping-list-container{
@@ -221,11 +233,11 @@ body{
     width: 265px;
     height: 198px;
     margin: 0 auto;
-  }
+  } */
   
   
   /* from 768px */
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
   
     .container{
       max-width: 768px;
@@ -255,11 +267,11 @@ body{
       height: 241px;
     }
   }
-  
+   */
   /* from 1280px */
   
-  @media screen and (min-width: 1394px){
+  /* @media screen and (min-width: 1394px){
     .container{
     min-width: 1394px;
     }
-  }
+  } */
