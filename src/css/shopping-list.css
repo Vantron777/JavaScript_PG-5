@@ -37,24 +37,52 @@ ul {
   list-style-type: none;
 }
 /* =================Styles shopping list with books============================= */
-.shoppinglist-list{
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
 
+.shopping-list-title {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.shopping-list-title-span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+  color: #4f2ee8;
+}
+.shoppinglist-list{
+  /* width: 335px;
+  height: 170px; */
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 14px;
 }
 
 .shoppinglist-book {
   display: flex;
-  gap: 24px;
-  border: 2px solid rgba(79, 46, 232, 0.4);
-  border-radius: 16px;
-  padding: 30px 24px;
-  width: 996px;
-  background-color: #fff;
+  /* gap: 24px; */
+  
+  /* padding: 30px 24px; */
+  /* width: 996px; */
+  
 }
 
 .shoppinglist-book-image {
   width: 116px;
   height: 165px;
   border-radius: 8px;
+  margin-right: 14px;
 }
 .shoppinglist-total-div{
   display: flex;
@@ -65,7 +93,7 @@ ul {
   display: flex;
   align-items: last baseline;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .shoppinglist-titcat-div {
@@ -84,11 +112,10 @@ ul {
 }
 .shoppinglist-book-category {
   font-family: "DM Sans", sans-serif;
-  font-style: italic;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16667;
-  letter-spacing: -0.04em;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
   color: #b4afaf;
 }
 
@@ -111,7 +138,7 @@ ul {
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.28571;
+  line-height: 1.29;
   letter-spacing: -0.04em;
   color: #111;
 }
@@ -157,6 +184,32 @@ ul {
   width: 34px;
   height: 34px;
 } */
+
+/* ===================from 768px==================================== */
+
+@media screen and (min-width: 768px){
+
+  .shopping-list-title{
+    font-size: 48px;
+    line-height: 1.08333;
+    letter-spacing: -0.04em;
+    margin-bottom: 140px;
+  }
+
+  .shopping-list-title-span{
+    font-size: 48px;
+    line-height: 1.08333;
+    letter-spacing: -0.04em;
+  }
+}
+
+/* ===================from 1394px==================================== */
+
+@media screen and (min-width: 1394px){
+  .container{
+  min-width: 1394px;
+  }
+}
 
 /* ==============Shoping-list empty======================== */
 /* body{
