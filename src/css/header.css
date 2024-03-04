@@ -30,7 +30,7 @@
   margin-right: 8px;
 }
 
-/* Navigation */
+/* Navigaton */
 
 .site-nav {
   display: flex;
@@ -138,6 +138,36 @@ input[type='checkbox']:checked ~ .check::after {
   transform: translateX(20px);
 }
 
+.sign-up-button {
+  display: none;
+}
+
+.sign-up-button_text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.burger-menu {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  margin-left: 14px;
+}
+
+.burger-menu__icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--black-color);
+  transition: fill var(--animation);
+}
+
+.burger-menu__icon:hover {
+  fill: #4f2ee8;
+}
+
 /* Mobile-Menu */
 
 .mobile-menu-container {
@@ -239,7 +269,39 @@ input[type='checkbox']:checked ~ .check::after {
   margin-top: 183px;
 }
 
-/* // Media */
+.log-out-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  margin-top: 447px;
+  position: relative;
+  top: -20px;
+  z-index: 1;
+  margin-left: 20px;
+  background-color: #ffffff;
+  border: 1.5px solid #111111;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.log-out-button_text {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+
+  color: #111111;
+}
+
+.log-out-button_icon {
+  margin-left: 7px;
+}
+
+/* ==MEDIA== */
+
 @media screen and (min-width: 375px) {
   .navigation {
     display: none;
@@ -259,7 +321,7 @@ input[type='checkbox']:checked ~ .check::after {
     margin-left: 0;
   }
 
-  /* .sign-up-button {
+  .sign-up-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -274,7 +336,7 @@ input[type='checkbox']:checked ~ .check::after {
 
   .burger-menu {
     display: none;
-  } */
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -295,12 +357,7 @@ input[type='checkbox']:checked ~ .check::after {
   overflow: hidden;
 }
 
-.js-log-out-button {
-  margin-top: 50px;
-  margin-left: 33px;
-}
-
-/* // Общие стили */
+/* ==ОБЩИЕ== */
 
 body {
   font-family: var(--main-font);
@@ -361,4 +418,25 @@ button {
   border: none;
   font-family: inherit;
   font-style: inherit;
+}
+
+:root {
+  /* ==COLOR==FONT==ANIMATION== */
+  --black-color: #111111;
+  --grey-color: #202024;
+  --purple-color: #4f2ee8;
+  --gold-color: #eac645;
+  --white-color: #ffffff;
+  --body-bg-color: #f6f6f6;
+  --button-text-color: #f3f3f3;
+  --books-title-color: #b4afaf;
+  --categories-list-color: rgba(17, 17, 17, 0.6);
+  --disactive-link-color: rgba(17, 17, 17, 0.5);
+  --icon-shop-white: grayscale(100%);
+  --book-modal-color: #ffffff;
+  --shopping-list-text: rgba(0, 0, 0, 0.6);
+
+  --main-font: 'DM Sans', sans-serif;
+
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
