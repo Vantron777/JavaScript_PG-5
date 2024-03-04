@@ -93,10 +93,14 @@ body.show-modal .backdrop {
     text-align: center;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    gap: 6.5px;
     padding: 0;
     display: flex;
     margin-top: 14px;
+  }
+  .amazon-logo {
+    filter: grayscale();
+    align-items: center;
   }
 
   .marketplace-list-item {
