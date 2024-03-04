@@ -9,6 +9,14 @@ export function createMarkup(obj) {
   return `
       
       <div class="modal-content">
+        <button
+        class="modal-close-btn modal-close-btn-js"
+        type="button">
+        <svg class="" width="16" height="16">
+          <use href="${icons}#icon-x-close"></use>
+          
+        </svg>
+      </button>
         <img class="modal-img" src="${
           obj.book_image
         }" alt="cover" width = "192">
@@ -37,17 +45,7 @@ export function createMarkup(obj) {
       
     </div>
 
-    <button
-        class="modal-close-btn modal-close-btn-js"
-        type="button"
-        
-        
-      >
-        <svg class="" width="24" height="24">
-          <use href="${icons}#icon-x-close-black"></use>
-          
-        </svg>
-      </button>
+    
     
   `;
 }
