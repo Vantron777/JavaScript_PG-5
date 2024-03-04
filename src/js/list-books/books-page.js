@@ -1,4 +1,4 @@
-import { getTopBooks, getCategoryList, getBooksByCategory } from './books-API.js'
+import { getTopBooks, getCategoryList, getBooksByCategory } from './books-API.js';
 
 const booksContainer = document.querySelector('.books-box');
 const categoriesListContainer = document.querySelector('.categories-list');
@@ -35,13 +35,14 @@ export async function showTopBooks() {
 // Function to display books by category
 export async function showBooksByCategory(categoryName) {
     const renderedBooks = await getBooksByCategory(categoryName);
-    showBooks(renderedBooks);
-}
-
-// Function to wrap the last word in the title
-function wrapLastWord(titleElement) {
-    const textContent = titleElement.textContent.split(" ");
-    const lastWord = textContent.pop();
+    return showBooks(renderedBooks);
+  }
+  
+  
+  // Function to wrap the last word in the title
+  function wrapLastWord(titleElement) {
+      const textContent = titleElement.textContent.split(" ");
+      const lastWord = textContent.pop();
     const updatedContent = textContent.join(" ") + (textContent.length > 0 ? ` <span class="books-title-color">${lastWord}</span>` : lastWord);
     titleElement.innerHTML = updatedContent;
 }
@@ -60,7 +61,7 @@ function determineBooksPerRow(windowWidth) {
 if (booksContainer) {
     showTopBooks();
     showCategories();
-
+    
     categoriesListContainer.addEventListener('click', handleCategoryClick);
     booksContainer.addEventListener('click', handleSeeMoreClick);
 }
@@ -69,17 +70,19 @@ if (booksContainer) {
 function handleCategoryClick(e) {
     e.preventDefault();
     const target = e.target;
-
+    
     if (target.tagName === 'A') {
         const categoryName = target.dataset.categoryName;
-
+        
         categoriesListContainer.querySelector('.js-categories-current').classList.remove('js-categories-current');
         target.classList.add('js-categories-current');
 
-        if (categoryName) {
-            showBooksByCategory(categoryName);
-        } else {
+        if (categoryName === '') {
+            // Якщо натиснуто "Усі категорії", показати TopBooks
             showTopBooks();
+        } else {
+            // Якщо натиснуто конкретну категорію, показати книги з цієї категорії
+            showBooksByCategory(categoryName);
         }
     }
 }
@@ -88,13 +91,13 @@ function handleCategoryClick(e) {
 function handleSeeMoreClick(e) {
     e.preventDefault();
     const target = e.target;
-
+    
     if (target.classList.contains('books-btn-see-more')) {
         const categoryName = target.dataset.categoryName;
-
+        
         categoriesListContainer.querySelector('.js-categories-current').classList.remove('js-categories-current');
         categoriesListContainer.querySelector(`[data-categoryName="${categoryName}"]`).classList.add('js-categories-current');
-
+        
         showBooksByCategory(categoryName);
     }
 }
