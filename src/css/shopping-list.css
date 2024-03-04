@@ -145,7 +145,7 @@ ul {
   height: 34px;
 }
 
-/* ====================================== */
+/* ==============Shoping-list empty======================== */
 body{
     background-color: #f6f6f6;
     box-sizing: border-box;
@@ -168,7 +168,7 @@ body{
     height: auto;
   }
   
-  
+  /* ===============Styles shopping-list empty============================ */
     .container {
       max-width: 375px;
       margin: 0 auto;
@@ -216,6 +216,7 @@ body{
     margin-bottom: 14px;
     width: 244px;
   }
+
   .shopping-list-img {
     width: 265px;
     height: 198px;
