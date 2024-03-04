@@ -45,12 +45,14 @@ body {
 
 @media sreen and (min-width: 375px) {
 }
-.container {
+.container-list-books {
   max-width: 375px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 40px;
+  padding-bottom: 40px;
   margin: 0 auto;
+  background-color: inherit;
 }
 
 .categories-list {
@@ -228,7 +230,7 @@ body {
 /* ==================TABLET================= */
 
 @media screen and (min-width: 768px) {
-  .container {
+  .container-list-books {
     max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
@@ -301,7 +303,7 @@ body {
 /* ====================DESKTOP==================== */
 
 @media screen and (min-width: 1140px) {
-  .container {
+  .container-list-books {
     max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
@@ -358,30 +360,17 @@ body {
 }
 
 /* ========================================= */
-
-.top-btn {
-  display: none;
-  /* Починається зі спрятаного стану */
-  position: fixed;
-  bottom: 5%;
-  right: 2%;
-  z-index: 9999;
-  padding: 10px;
-  cursor: pointer;
-
-  border: 2px solid #eac645;
-  background-color: inherit;
-  border-radius: 50px;
-  overflow: hidden;
-
-  transition: all 150ms ease-in-out;
-
-  &:hover {
-    box-shadow: 0 0 10px 0 #eac645 inset, 0 0 10px 4px #eac645;
-  }
+/* ================dark-theme================== */
+.dark .categories-itm {
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.top-btn-svg {
-  height: 20px;
-  stroke: #111;
+.dark .js-categories-current {
+  color: #eac645;
+}
+
+.dark .books-btn-see-more,
+.dark .books-box-title,
+.dark .books-box-desc-title {
+  color: #fff;
 }
