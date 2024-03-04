@@ -1,0 +1,265 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.shoppinglist-book {
+  display: flex;
+  gap: 24px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  padding: 30px 24px;
+  width: 996px;
+
+  background-color: #fff;
+}
+
+.shoppinglist-tb-div {
+  display: flex;
+  align-items: last baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.shoppinglist-titcat-div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shoppinglist-total-div {
+  display: flex;
+  flex-direction: column;
+  width: 854px;
+}
+
+.shoppinglist-low-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shoppinglist-book-low-ul {
+  display: flex;
+  gap: 16px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.shoppinglist-desauthorlink {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 110px;
+}
+.shoppinglist-book-image {
+  width: 116px;
+  height: 165px;
+  border-radius: 8px;
+}
+
+.shoppinglist-book-deletebutton {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background-image: url("../img/dump.png");
+}
+
+.shoppinglist-book-title {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.125;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.shoppinglist-book-category {
+  font-family: "DM Sans", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+}
+
+.shoppinglist-book-description {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.04em;
+  color: #111;
+}
+
+.shoppinglist-book-author {
+  font-family: "DM Sans", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+}
+
+.shoppinglist-book-button-img {
+  width: 34px;
+  height: 34px;
+}
+
+/* ==============Shoping-list empty======================== */
+body{
+    background-color: #f6f6f6;
+    box-sizing: border-box;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* ===============Styles shopping-list empty============================ */
+    .container {
+      max-width: 375px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      
+    }
+  
+    .shopping-list-container{
+      align-items: flex-start;
+      padding-bottom: 40px;
+      display: flex;
+    }
+  
+  .shopping-list {
+    width: 100%;
+    border: 2px solid black;
+    
+  }
+  .shopping-list-title {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;;
+    font-size: 32px;
+    line-height: 1.19;
+    letter-spacing: -0.04em;
+    color: #111;
+    margin-bottom: 120px;
+  }
+  .shopping-list-title-span {
+    font-family: "DM Sans", sans-serif;
+    font-size: 32px;
+    line-height: 1.19;
+    letter-spacing: -0.04em;
+    color: #4f2ee8;
+    padding: 0;
+  }
+  .shopping-list-text {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 auto;
+    margin-bottom: 14px;
+    width: 244px;
+  }
+
+  .shopping-list-img {
+    width: 265px;
+    height: 198px;
+    margin: 0 auto;
+  }
+  
+  
+  /* from 768px */
+  @media screen and (min-width: 768px) {
+  
+    .container{
+      max-width: 768px;
+    }
+  
+    .shopping-list-title{
+      font-size: 48px;
+      line-height: 1.08333;
+      letter-spacing: -0.04em;
+      margin-bottom: 140px;
+    }
+  
+    .shopping-list-title-span{
+      font-size: 48px;
+      line-height: 1.08333;
+      letter-spacing: -0.04em;
+    }
+  
+    .shopping-list-text{
+      font-size: 18px;
+      line-height: 1.33333;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .shopping-list-img {
+      width: 322px;
+      height: 241px;
+    }
+  }
+  
+  /* from 1280px */
+  
+  @media screen and (min-width: 1394px){
+    .container{
+    min-width: 1394px;
+    }
+  }

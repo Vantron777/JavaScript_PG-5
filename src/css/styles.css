@@ -10,6 +10,8 @@
 @import url('./reset.css');
 @import url('./shopping-list.css');
 @import url('./support.css');
+@import url('./topBtn.css');
+@import url('./loader.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
