@@ -1,9 +1,7 @@
 body.show-modal {
   overflow: hidden;
 }
-.hidden {
-  display: none;
-}
+
 body.show-modal .backdrop {
   display: flex;
 }
@@ -98,7 +96,7 @@ body.show-modal .backdrop {
     display: flex;
     margin-top: 14px;
   }
-  .amazon-logo {
+  .modal-icons {
     filter: grayscale();
     align-items: center;
   }
@@ -171,10 +169,6 @@ body.show-modal .backdrop {
     top: 12px;
     right: 12px;
   }
-
-  .modal-close-btn:hover {
-    fill: #4f2ee8;
-  }
 }
 
 /*-------------------------Desktop-------------------------*/
@@ -220,10 +214,10 @@ body.show-modal .backdrop {
   }
   .modal-buttons {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
+    flex-direction: column;
   }
   .modal-button-shopping-list {
     border: 2px solid #4f2ee8;
@@ -240,6 +234,21 @@ body.show-modal .backdrop {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: 90px;
   }
+}
+
+.amazon-icon {
+  width: 62px;
+  height: 30px;
+}
+
+.close-btn:hover {
+  stroke: #4f2ee8;
+}
+.close-btn {
+  stroke: #000;
+}
+
+.hidden {
+  display: none;
 }
