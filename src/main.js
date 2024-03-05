@@ -2,7 +2,6 @@ import './js/colorTheme';
 import './js/heder/toggle';
 import './js/heder/header-burger';
 import './js/list-books/books-API';
-import './js/list-books/click-events';
 import './js/loader';
 import './js/shopping-list/add-to-shopping-list';
 import './js/shopping-list/create-mark-up';
