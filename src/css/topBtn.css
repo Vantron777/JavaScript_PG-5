@@ -8,8 +8,8 @@
   padding: 10px;
   cursor: pointer;
 
-  border: 2px solid #eac645;
-  background-color: inherit;
+  border: 2px solid #4f2ee8;
+  background-color: #4f2ee8;
   backdrop-filter: blur(3px);
   border-radius: 50px;
   overflow: hidden;
@@ -17,13 +17,13 @@
   transition: all 150ms ease-in-out;
 
   &:hover {
-    box-shadow: 0 0 10px 0 #eac645 inset, 0 0 10px 4px #eac645;
+    box-shadow: 0 0 10px 0 #4f2ee8 inset, 0 0 10px 4px #4f2ee8;
   }
 }
 
 .top-btn-svg {
   height: 20px;
-  stroke: #111;
+  stroke: #4f2ee8;
 }
 /* ================dark-theme================== */
 .dark .top-btn-svg {

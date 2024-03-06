@@ -7,11 +7,11 @@ window.addEventListener('load', () => {
 const loaderContainer = document.querySelector('.loader');
 
 export function showLoader() {
-  loaderContainer.classList.remove('visually-hidden');
+  // loaderContainer.classList.remove('visually-hidden');
 }
 
 export function hideLoader() {
-  loaderContainer.classList.add('visually-hidden');
+  // loaderContainer.classList.add('visually-hidden');
 }
 
 showLoader();
