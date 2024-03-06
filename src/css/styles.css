@@ -6,12 +6,12 @@
 */
 @import url('./header.css');
 @import url('./list-books.css');
+@import url('./loader.css');
 @import url('./modal.css');
-@import url('./reset.css');
 @import url('./shopping-list.css');
 @import url('./support.css');
 @import url('./topBtn.css');
-@import url('./loader.css');
+@import url('./reset.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
