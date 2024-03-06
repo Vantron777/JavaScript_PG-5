@@ -8,7 +8,7 @@ let modalCloseBtn;
 
 backdropEl.addEventListener('click', onBackdropClick);
 
-export async function openModal(bookId) {
+async function openModal(bookId) {
   const book = await getBookInfo(bookId);
   const markUp = createMarkup(book);
   modalElem.innerHTML = markUp;
