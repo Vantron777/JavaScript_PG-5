@@ -264,7 +264,7 @@ input[type='checkbox']:checked ~ .check::after {
   padding: 0;
   background-size: contain;
   width: 100%;
-  height: 100%;
+  height: 812px;
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -300,6 +300,7 @@ input[type='checkbox']:checked ~ .check::after {
   width: 28px;
   height: 28px;
   fill: var(--black-color);
+
   transition: fill var(--animation);
 }
 
@@ -420,67 +421,4 @@ input[type='checkbox']:checked ~ .check::after {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-/* ==ОБЩИЕ== */
-
-body {
-  font-family: var(--main-font);
-  background-color: var(--body-bg-color);
-  margin: 0;
-}
-
-[class$='-container'] {
-  margin: 0 auto;
-}
-
-[data-theme='dark'] {
-  --black-color: #ffffff;
-  --grey-color: #202024;
-  --purple-color: #eac645;
-  --gold-color: #4f2ee8;
-  --white-color: #111111;
-  --body-bg-color: #202024;
-  --button-text-color: #111111;
-  --books-title-color: #b4afaf;
-  --categories-list-color: rgba(255, 255, 255, 0.6);
-  --disactive-link-color: rgba(246, 246, 246, 0.5);
-  --icon-shop-white: invert(100%);
-  --book-modal-color: #202024;
-  --shopping-list-text: rgba(255, 255, 255, 0.6);
-}
-
-/* MOBILE */
-@media screen and (min-width: 375px) {
-  [class$='-container'] {
-    max-width: 375px;
-    padding: 0 20px;
-  }
-}
-
-/* TABLET */
-@media screen and (min-width: 768px) {
-  [class$='-container'] {
-    max-width: 768px;
-    padding: 0 32px;
-  }
-}
-
-/* DESKTOP */
-@media screen and (min-width: 1440px) {
-  [class$='-container'] {
-    max-width: 1440px;
-    padding: 0 24px;
-  }
-}
-
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-button {
-  border: none;
-  font-family: inherit;
-  font-style: inherit;
 }
