@@ -1,13 +1,13 @@
-let randomKey;
+// let randomKey;
 
-function addItemLS(shopObject) {
-  randomKey = `randomkey${Math.random()}`;
-  localStorage.setItem(randomKey, JSON.stringify(shopObject));
-}
+// function addItemLS(shopObject) {
+//   randomKey = `randomkey${Math.random()}`;
+//   localStorage.setItem(randomKey, JSON.stringify(shopObject));
+// }
 
-function removeItemLS(randomKey) {
-  localStorage.removeItem(randomKey);
-}
+// function removeItemLS(randomKey) {
+//   localStorage.removeItem(randomKey);
+// }
 
 // shopObject ожидаем примерно в таком виде:
 
