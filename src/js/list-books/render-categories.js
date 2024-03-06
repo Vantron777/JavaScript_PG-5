@@ -1,4 +1,6 @@
-//Render one book
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 function renderOneBook(books) {
   const booksRendered = books
     .map(el => {
@@ -25,42 +27,74 @@ function renderOneBook(books) {
 
   return booksRendered;
 }
-//Render top books
-export const renderTopBooks = (data, booksPerRow) => {
-  const categoriesTopBooks = data
-    .map(el => {
-      const categoryName = el.list_name;
-      const books = renderOneBook(el.books.slice(0, booksPerRow));
-      return `<div class="books-box-holder">
-        <h3 class="books-box-subtitle">${categoryName}</h3>
-        <ul class="books-box-list">${books}</ul>
-        <button data-categoryName="${categoryName}" class="books-btn-see-more" type="button">see more</button>
-      </div>`;
-    })
-    .join('');
 
-  return `<div class="books-container"><h2 class="books-title">Best Sellers Books</h2>${categoriesTopBooks}</div>`;
+export const renderTopBooks = (data, booksPerRow) => {
+  if (!data || data.length === 0) {
+    showError('Sorry, books not found');
+    return;
+  } else {
+    const categoriesTopBooks = data
+      .map(el => {
+        const categoryName = el.list_name;
+        const books = renderOneBook(el.books.slice(0, booksPerRow));
+        return `<div class="books-box-holder">
+        <h3 class="books-box-subtitle">${categoryName}</h3>
+         <ul class="books-box-list">${books}</ul>
+           <button data-categoryName="${categoryName}" class="books-btn-see-more" type="button">see more</button>
+      </div>`;
+      })
+      .join('');
+
+    return `<h2 class="books-box-title">Best Sellers <span class="books-title-span"> Books</span></h2>${categoriesTopBooks}`;
+  }
 };
-//Render categories
+
+
 export const renderCategoriesList = data => {
   const categoriesItems = data
+    .sort((a, b) => {
+      if (a.list_name < b.list_name) {
+        return -1;
+      }
+      if (a.list_name > b.list_name) {
+        return 1;
+      }
+      return 0;
+    })
     .map(el => {
       return `<li class="categories-itm"><a href="#" data-categoryName="${el.list_name}">${el.list_name}</a></li>`;
     })
     .join('');
 
-  return `<li class="categories-itm js-categories-current "><a href="#" data-categoryName="">All categories</a></li>${categoriesItems}`;
+  return ` <li class="categories-itm js-categories-current ">
+  <a href="#" data-categoryName="all categories">All categories</a></li>${categoriesItems}`;
 };
-//Render category books
-export const renderBooksByCategory = data => {
-  const categoryMarkup = data
-    .map(el => {
-      const books = renderOneBook(el);
-      return `<div class="books-category-box visually-hidden">
-      <h2 class="books-box-title">${el.list_name}</h2>
-      <ul class="books-category-list">${books}</ul>
-    </div>`;
-    }).join('');
 
-  return categoryMarkup;
+export const renderBooksByCategory = (data, categoryName) => {
+  if (!data || data.length === 0) {
+    showError('Sorry, category of book not found');
+    return;
+  } else {
+    const books = renderOneBook(data);
+    const categoryWords = categoryName.split(' ');
+
+    const lastWord = categoryWords[categoryWords.length - 1];
+    const categoryHtml = `<h2 class="books-box-title">
+   ${categoryWords.slice(0, -1).join(' ')} 
+   <span class="books-title-span">${lastWord}</span>
+ </h2>
+ <div class="books-category-box">
+   <ul class="books-category-list">${books}</ul>
+ </div>`;
+    return categoryHtml;
+  }
 };
+
+function showError(msg) {
+  iziToast.error({
+    message: msg,
+    messageColor: 'white',
+    backgroundColor: 'red',
+    position: 'topRight',
+  });
+}

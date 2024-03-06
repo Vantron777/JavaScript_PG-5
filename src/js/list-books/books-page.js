@@ -1,103 +1,141 @@
-import { getTopBooks, getCategoryList, getBooksByCategory } from './books-API.js';
+// import { showLoader, hideLoader } from '../loader';
 
-const booksContainer = document.querySelector('.books-box');
-const categoriesListContainer = document.querySelector('.categories-list');
+import {
+  getTopBooks,
+  getCategoryList,
+  getBooksByCategory,
+} from './books-API.js';
 
+//function determine Books PerRow
 const BOOKS_PER_ROW_MAP = {
-    'default': 3,
-    'largeScreen': 5,
-    'smallScreen': 1
+  default: 3,
+  largeScreen: 5,
+  smallScreen: 1,
 };
 
-// Function to display books
-async function showBooks(renderedContent) {
-    booksContainer.innerHTML = renderedContent;
-    const titleElement = document.querySelector('.books-box-desc-title');
-    
-    if (titleElement) {
-        wrapLastWord(titleElement);
-    }
-}
-// Function to display categories
-async function showCategories() {
-    const renderedCategories = await getCategoryList();
-    categoriesListContainer.innerHTML = renderedCategories;
-}
-
-// Function to display top books
-export async function showTopBooks() {
-    const windowWidth = window.innerWidth;
-    const booksPerRow = determineBooksPerRow(windowWidth);
-    const renderedTop = await getTopBooks(booksPerRow);
-    showBooks(renderedTop);
-}
-
-// Function to display books by category
-export async function showBooksByCategory(categoryName) {
-    const renderedBooks = await getBooksByCategory(categoryName);
-    return showBooks(renderedBooks);
-  }
-  
-  
-  // Function to wrap the last word in the title
-  function wrapLastWord(titleElement) {
-      const textContent = titleElement.textContent.split(" ");
-      const lastWord = textContent.pop();
-    const updatedContent = textContent.join(" ") + (textContent.length > 0 ? ` <span class="books-title-color">${lastWord}</span>` : lastWord);
-    titleElement.innerHTML = updatedContent;
-}
-// Function to determine the number of books per row based on window width
 function determineBooksPerRow(windowWidth) {
-    if (windowWidth >= 1440) {
-        return BOOKS_PER_ROW_MAP.largeScreen;
-    } else if (windowWidth < 768) {
-        return BOOKS_PER_ROW_MAP.smallScreen;
+  if (windowWidth >= 1440) {
+    return BOOKS_PER_ROW_MAP.largeScreen;
+  } else if (windowWidth < 768) {
+    return BOOKS_PER_ROW_MAP.smallScreen;
+  } else {
+    return BOOKS_PER_ROW_MAP.default;
+  }
+}
+
+const windowWidthStart = window.innerWidth;
+let ctrlBreikpoint = determineBooksPerRow(windowWidthStart);
+
+window.addEventListener('resize', () => {
+  const newWindowWidth = window.innerWidth;
+  ctrlBreikpoint = determineBooksPerRow(newWindowWidth);
+});
+
+//function show category
+async function displayCategories() {
+//   showLoader();
+  const categoriesContainer = document.querySelector('.categories-list');
+  const renderedCategories = await getCategoryList();
+  categoriesContainer.innerHTML = renderedCategories;
+  categoriesContainer.addEventListener('click', handleCategoryClick);
+//   hideLoader();
+  return categoriesContainer;
+}
+
+async function handleCategoryClick(e) {
+  e.preventDefault();
+
+  const target = e.target;
+  const catItem = target.closest('.categories-itm');
+  if (!catItem) {
+    return;
+  }
+
+  const catName = target.dataset.categoryname;
+
+  const categoriesContainer = await displayCategories();
+  updateCategoryClasses(categoriesContainer, catName);
+// showLoader();
+  
+  if (catName === 'all categories') {
+    displayTopBooks();
+  } else {
+    await displayBooksByCategory(categoriesContainer, catName);
+  }
+}
+
+//button see more
+document.addEventListener('click', handleSeeMoreClick);
+async function handleSeeMoreClick(event) {
+  if (event.target && event.target.classList.contains('books-btn-see-more')) {
+    const catName = event.target.dataset.categoryname;
+//   showLoader(); 
+    await displayBooksByCategory(null, catName);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
+    const categoriesContainer = await displayCategories();
+    updateCategoryClasses(categoriesContainer, catName);
+  }
+}
+
+// show books by category
+async function displayBooksByCategory(categoriesContainer, catName) {
+//   showLoader();
+  try {
+    const booksContainer = document.querySelector('.books-box');
+    if (!booksContainer) {
+      console.error('Element not found.');
+      return;
+    }
+      const renderedBooks = await getBooksByCategory(catName);
+     booksContainer.innerHTML = renderedBooks;
+    
+    // console.log(renderedBooks);
+  } catch (error) {
+    console.error('Error displaying books by category:', error);
+  } finally {
+    // hideLoader();
+  }
+}
+
+//show best sellers books
+async function displayTopBooks() {
+  try {
+    // showLoader();
+    const topBooksContainer = document.querySelector('.books-box');
+     const newWindowWidth = window.innerWidth;
+      ctrlBreikpoint = determineBooksPerRow(newWindowWidth);
+    const booksPerRow = ctrlBreikpoint;
+    const renderedBooks = await getTopBooks(booksPerRow);
+
+    topBooksContainer.innerHTML = renderedBooks;
+    
+  } catch (error) {
+    console.error('Error displaying top books:', error);
+  } finally {
+    // hideLoader();
+  }
+}
+
+
+window.addEventListener('load', () => {
+  displayTopBooks();
+  displayCategories();
+});
+
+//function update category classes categories-itm
+function updateCategoryClasses(categoriesContainer, catName) {
+  const categoriesItems =
+    categoriesContainer.querySelectorAll('.categories-itm');
+  categoriesItems.forEach(item => {
+    if (item.firstElementChild.dataset.categoryname === catName) {
+      item.classList.add('js-categories-current');
     } else {
-        return BOOKS_PER_ROW_MAP.default;
+      item.classList.remove('js-categories-current');
     }
-}
-
-// Initialize the page
-if (booksContainer) {
-    showTopBooks();
-    showCategories();
-    
-    categoriesListContainer.addEventListener('click', handleCategoryClick);
-    booksContainer.addEventListener('click', handleSeeMoreClick);
-}
-
-// Event handler for category click
-function handleCategoryClick(e) {
-    e.preventDefault();
-    const target = e.target;
-    
-    if (target.tagName === 'A') {
-        const categoryName = target.dataset.categoryName;
-        
-        categoriesListContainer.querySelector('.js-categories-current').classList.remove('js-categories-current');
-        target.classList.add('js-categories-current');
-
-        if (categoryName === '') {
-            // Якщо натиснуто "Усі категорії", показати TopBooks
-            showTopBooks();
-        } else {
-            // Якщо натиснуто конкретну категорію, показати книги з цієї категорії
-            showBooksByCategory(categoryName);
-        }
-    }
-}
-
-// Event handler for "See More" click
-function handleSeeMoreClick(e) {
-    e.preventDefault();
-    const target = e.target;
-    
-    if (target.classList.contains('books-btn-see-more')) {
-        const categoryName = target.dataset.categoryName;
-        
-        categoriesListContainer.querySelector('.js-categories-current').classList.remove('js-categories-current');
-        categoriesListContainer.querySelector(`[data-categoryName="${categoryName}"]`).classList.add('js-categories-current');
-        
-        showBooksByCategory(categoryName);
-    }
+  });
 }
