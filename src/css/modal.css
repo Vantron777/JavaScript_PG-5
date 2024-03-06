@@ -27,6 +27,20 @@ body.show-modal .backdrop {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
+.amazon-icon {
+  width: 62px;
+  height: 30px;
+}
+
+.close-btn-icon {
+  stroke: #000;
+  background-color: #fff;
+}
+
+.close-btn-icon:hover {
+  stroke: #4f2ee8;
+}
+
 .dark.amazon-icon {
   filter: brightness(0) invert(1);
 }
@@ -39,7 +53,7 @@ body.show-modal .backdrop {
   filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
-.dark.close-btn {
+.dark.close-btn-icon {
   stroke: #fff;
   background-color: #000;
 }
@@ -117,7 +131,7 @@ body.show-modal .backdrop {
     text-align: center;
     justify-content: flex-start;
     align-items: center;
-    gap: 6.5px;
+    gap: 20px;
     padding: 0;
     display: flex;
     margin-top: 14px;
@@ -245,24 +259,6 @@ body.show-modal .backdrop {
     align-items: center;
     text-align: center;
   }
-}
-
-.amazon-icon {
-  width: 62px;
-  height: 30px;
-}
-
-.close-btn:hover {
-  stroke: #4f2ee8;
-}
-.close-btn {
-  stroke: #000;
-  background-color: #fff;
-}
-
-.dark.close-btn {
-  stroke: #fff;
-  background-color: #000;
 }
 
 .hidden {
