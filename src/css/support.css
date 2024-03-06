@@ -1,22 +1,38 @@
-.foto-s {
-  width: 32px;
-  height: 32px;
-}
-.img-s {
-  height: 32px;
-}
-
+/* Mobile 375px */
 .container-s {
-  margin: 0 auto;
+  margin: 40px 20px;
   border-radius: 16px;
-  width: 356px;
-  height: 474px;
+  width: 335px;
+  height: 460px;
   box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
   background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
     rgb(79, 46, 232) 18.02733987569809%,
     rgb(255, 255, 255) 100%
   );
+}
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .container-s {
+    width: 335px;
+    height: 474px;
+    margin-top: 40px;
+    margin-right: 32px;
+    margin-left: 32px;
+    margin-bottom: 98px;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1440px) {
+  .container-s {
+    width: 356px;
+    height: 474px;
+    margin-top: 86px;
+    margin-right: 40px;
+    margin-left: 24px;
+    margin-bottom: 158px;
+  }
 }
 
 .title-s {
@@ -26,41 +42,16 @@
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 24px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: -0.04em;
   color: #fff;
-  gap: 14px;
+  gap: 12px;
 }
 
-.swiper-button-next {
-  display: flex;
-
-  fill: #4f2ee8;
-  transition: transform 0.5s ease-in-out;
-  padding: 8px 16px;
-  width: 32px;
+.img-s {
   height: 32px;
-  border-radius: 100%;
-  align-items: center;
-  border: none;
-  justify-content: center;
-  margin: 24px auto;
 }
-.scroll-button {
-  cursor: pointer;
-  width: 32px;
-  min-height: 32px;
-  background-color: #fff;
-  border: none;
-  border-radius: 50px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  padding: 0;
-  transition: transform 0.5s ease-in-out;
-  display: flex;
-  transform: rotateX(0);
-}
+
 .swiper-container {
   width: 300px;
   height: 292px;
@@ -68,6 +59,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .swiper-slide {
   display: flex;
   height: 45px;
@@ -108,25 +100,17 @@
   outline: 2px solid rgb(105, 127, 255);
   box-shadow: 0px 0px 10px rgb(105, 127, 255);
   position: relative;
-  background-color: #7961e3;
-}
-
-.icon-s {
-  justify-content: center;
-  /* transform: rotateX(180deg); */
+  background-color: #fff;
 }
 
 .button-con {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
-.btn-s {
-  transition: transform 0.5s ease-in-out;
+.chevron-down {
+  fill: #4f2ee8;
 }
-
-/* Додайте стиль для кнопки у стані, коли вона розгорнута на 180 градусів */
-/* .btn-s.rotated {
-  transform: rotate(180deg);
-} */
