@@ -22,7 +22,6 @@
 .title-s {
   padding-top: 24px;
   padding-left: 40px;
-  padding-bottom: 40px;
   display: flex;
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
@@ -38,10 +37,10 @@
 
   fill: #4f2ee8;
   transition: transform 0.5s ease-in-out;
-  /* padding: 8px 16px; */
+  padding: 8px 16px;
   width: 32px;
   height: 32px;
-  /* border-radius: 100%; */
+  border-radius: 100%;
   align-items: center;
   border: none;
   justify-content: center;
@@ -64,16 +63,13 @@
 }
 .swiper-container {
   width: 300px;
-  /* height: 292px; */
+  height: 292px;
   display: flex;
   flex-direction: column;
-  /* gap: 20px; */
   justify-content: center;
-  /* padding-left: 40px; */
 }
 .swiper-slide {
   display: flex;
-  /* width: 143px; */
   height: 45px;
   gap: 16px;
   filter: brightness(0) invert(1);
@@ -81,18 +77,56 @@
 }
 
 .swiper-wrapper {
+  flex-direction: column;
+  padding-left: 50px;
   transition-duration: 0ms;
-  overflow-y: auto;
+  overflow-y: clip;
   max-height: 260px;
   overflow-x: hidden;
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-.swiper-wrapper::-webkit-scrollbar {
-  display: none;
+.charity-index {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.04em;
+  color: #fff;
 }
 
-.btn-up {
-  /* visibility: hidden; */
-  transform: rotateX(180deg);
+.btn-s {
+  width: 42px;
+  height: 42px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  outline: 2px solid rgb(105, 127, 255);
+  box-shadow: 0px 0px 10px rgb(105, 127, 255);
+  position: relative;
+  background-color: #7961e3;
 }
+
+.icon-s {
+  justify-content: center;
+  /* transform: rotateX(180deg); */
+}
+
+.button-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-s {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Додайте стиль для кнопки у стані, коли вона розгорнута на 180 градусів */
+/* .btn-s.rotated {
+  transform: rotate(180deg);
+} */
