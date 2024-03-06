@@ -17,7 +17,7 @@
 .shopping-list {
   width: 100%;
 }
-.shopping-list-title {
+.shopping-list-title-books {
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -25,7 +25,7 @@
   letter-spacing: -0.04em;
   color: #111;
 }
-.shopping-list-title-span {
+.shopping-list-title-span-books {
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -53,6 +53,9 @@
   position: relative;
   overflow: hidden;
 }
+/* .dark-shoppinglist-book {
+  background-color: #111;
+} */
 .shoppinglist-book-image {
   min-width: 100px;
   height: 142px;
@@ -79,6 +82,9 @@
   overflow: hidden;
   font-family: 'DM Sans', sans-serif;
 }
+/* .dark-shoppinglist-book-title {
+  color: #fff;
+} */
 .shoppinglist-book-category {
   max-width: 156px;
   letter-spacing: 0.03em;
@@ -93,6 +99,7 @@
   overflow: hidden;
   font-family: 'DM Sans', sans-serif;
 }
+
 .shoppinglist-book-description {
   width: 100%;
   max-width: 193px;
@@ -111,6 +118,9 @@
   overflow: hidden;
   font-family: 'DM Sans', sans-serif;
 }
+/* .dark-shoppinglist-book-description {
+  color: #fff;
+} */
 .shoppinglist-low-div {
   flex-grow: 1;
   justify-content: space-between;
@@ -145,6 +155,9 @@
   width: 32px;
   height: 11px;
 }
+/* .dark-shopping-list-img {
+  background-color: #fff;
+} */
 /* .shoppinglist-book-low-li-apple {
 }
 .shopping-apple-link {
@@ -287,7 +300,9 @@
   padding-bottom: 40px;
   display: flex;
 }
-
+/* .dark-bg-color-section {
+  background-color: #202024;
+} */
 .shopping-list {
   width: 100%;
   border: 2px solid black;
@@ -301,6 +316,9 @@
   color: #111;
   margin-bottom: 120px;
 }
+/* .dark-shopping-list-title {
+  color: #fff;
+} */
 .shopping-list-title-span {
   font-family: 'DM Sans', sans-serif;
   font-size: 32px;
@@ -321,7 +339,9 @@
   margin-bottom: 14px;
   width: 244px;
 }
-
+/* .dark-shopping-list-text {
+  color: rgba(255, 255, 255, 0.6);
+} */
 .shopping-list-img {
   width: 265px;
   height: 198px;
