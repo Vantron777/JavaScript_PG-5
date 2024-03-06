@@ -2,7 +2,7 @@
   <!-- Desctop-Tablet-Container -->
   <div class="header-container">
     <!-- Logo -->
-    <a href="/src/index.html" class="header-logo-link">
+    <a href="/index.html" class="header-logo-link">
       <svg class="header-logo" width="24" height="24">
         <use href="./img/sprite.svg#icon-logo-1"></use>
       </svg>
@@ -13,7 +13,7 @@
     <nav class="navigation">
       <ul class="site-nav">
         <li class="site-nav__item_active">
-          <a href="/src/index.html" class="site-nav__link_active">Home</a>
+          <a href="/index.html" class="site-nav__link_active">Home</a>
         </li>
         <li class="site-nav__item">
           <a href="./shopping-list.html" class="site-nav__link"
@@ -32,9 +32,46 @@
     </label>
 
     <button type="button" class="burger-menu">
-      <svg class="burger-menu_icon" width="28" height="28">
-        <use href="./img/sprite.svg#icon-x-close-black"></use>
+      <svg
+        class="burger-menu_icon"
+        width="28"
+        height="28"
+        viewBox="0 0 28 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.8333 11.6667H3.5"
+          stroke="#111111"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M24.5 7H3.5"
+          stroke="#111111"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M24.5 16.3333H3.5"
+          stroke="#111111"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M19.8333 21H3.5"
+          stroke="#111111"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
+      <!-- <svg class="burger-menu_icon" width="28" height="28">
+        <use href="./img/sprite.svg#icon-align-left"></use>
+      </svg> -->
     </button>
   </div>
 
@@ -43,8 +80,8 @@
   <div class="mobile-menu-container">
     <div class="burger-container">
       <div class="mobile-menu__header">
-        <a href="/src/index.html" class="header-logo-link"
-          ><svg class="header-logo" width="24" height="24">
+        <a href="./index.html" class="header-logo-link">
+          <svg class="header-logo" width="24" height="24">
             <use href="./img/sprite.svg#icon-logo-1"></use>
           </svg>
           Bookshelf
@@ -58,22 +95,27 @@
 
         <!-- Button-Menu -->
         <button type="button" class="mobile-menu__button">
-          <svg class="mobile-menu__icon" width="28" height="28">
-            <use href="../img/sprite.svg#icon-x-close-black"></use>
+          <svg
+            class="mobile-menu__icon"
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 7L7 21M7 7L21 21"
+              stroke="#111111"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
+          <!-- <svg class="mobile-menu__icon" width="28" height="28">
+            <use href="../img/sprite.svg#icon-x-close-black"></use>
+          </svg> -->
         </button>
       </div>
-      <button
-        class="sign-up-button-burger"
-        type="button"
-        data-modal-open
-        aria-label="sign in"
-      >
-        <span class="sign-up-button_text">Sign up</span>
-        <svg class="sign-up-button_icon" width="20" height="20">
-          <use href="./img/sprite.svg#icon-arrow-narrow-right"></use>
-        </svg>
-      </button>
 
       <!-- Navigation-Mobile -->
       <nav class="navigation-burger">
@@ -90,17 +132,6 @@
           </li>
         </ul>
       </nav>
-      <button
-        class="log-out-button"
-        type="button"
-        data-modal-open
-        aria-label="sign in"
-      >
-        <span class="log-out-button_text">Log out</span>
-        <svg class="log-out-button_icon" width="20" height="20">
-          <use href="./img/sprite.svg#icon-arrow-narrow-right"></use>
-        </svg>
-      </button>
     </div>
   </div>
 </header>
