@@ -12,7 +12,7 @@ export function createMarkup(obj) {
         <button
         class="modal-close-btn modal-close-btn-js"
         type="button">
-        <svg class="" width="16" height="16">
+        <svg class="close-btn" width="16" height="16">
           <use href="${icons}#icon-x-close"></use>
           
         </svg>
@@ -67,8 +67,8 @@ function linksTemplate(links) {
           storeNames.amazon
             ? `<li class="marketplace-list-item">
               <a href="${storeNames.amazon}" >
-              <svg class="amazon-logo" width="24" height="24">
-          <use href=".${icons}#icon-logo-1"></use>
+              <svg class="modal-icons amazon-icon" width="64" height="30">
+          <use href=".${icons}#icon-amazon"></use>
         </svg></a>
             </li>`
             : ''
@@ -77,8 +77,8 @@ function linksTemplate(links) {
           storeNames.appleBooks
             ? `<li class="marketplace-list-item">
               <a href="${storeNames.appleBooks}" >
-              <svg class="appbooks-logo" width="24" height="24">
-          <use href=".${icons}#icon-logo-1"></use>
+              <svg class="modal-icons appbooks-icon" width="33" height="32">
+          <use href=".${icons}#icon-ibooks"></use>
         </svg></a>
             </li>`
             : ''

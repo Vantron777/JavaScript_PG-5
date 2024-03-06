@@ -8,7 +8,7 @@ let modalCloseBtn;
 
 backdropEl.addEventListener('click', onBackdropClick);
 
-async function openModal(bookId) {
+export async function openModal(bookId) {
   const book = await getBookInfo(bookId);
   const markUp = createMarkup(book);
   modalElem.innerHTML = markUp;
@@ -63,5 +63,3 @@ function onModalClose(e) {
   console.log(e);
   if (e.key === 'Escape') hideModal();
 }
-
-// openModal('643282b1e85766588626a080');
