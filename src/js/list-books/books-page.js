@@ -5,7 +5,7 @@ import {
   getCategoryList,
   getBooksByCategory,
 } from './books-API.js';
-
+import { openModal } from "../shopping-list/modal.js";
 //function determine Books PerRow
 const BOOKS_PER_ROW_MAP = {
   default: 3,
@@ -139,3 +139,24 @@ function updateCategoryClasses(categoriesContainer, catName) {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', async function () {
+  const bookItems = document.querySelectorAll('.books-box-list');
+  console.log(bookItems);
+
+   bookItems.forEach(bookItem => {
+    console.log(bookItem);
+    if (bookItem.classList.contains('.books-box-itm')) {
+      bookItem.addEventListener('click', () => {
+        const bookId = bookItem.id;
+        console.log('Click');
+        openModal(bookId);
+      });
+    } else {
+      console.error('Error: Element does not have class "books-box-itm"');
+    }
+  });
+});
+
+
+
