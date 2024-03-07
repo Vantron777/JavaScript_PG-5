@@ -1,4 +1,13 @@
 /* Shoping-list-with-books */
+
+.shopsupport {
+  display: flex;
+  gap: 40px;
+}
+.support-div {
+  width: 356px;
+  margin-top: 40px;
+}
 .books {
   display: flex;
   flex-direction: column;
@@ -281,6 +290,11 @@
     );
     border-radius: 16px;
     padding: 24px 40px;
+  }
+
+  .shopping-list {
+    width: 996px;
+    overflow: auto;
   }
 }
 
