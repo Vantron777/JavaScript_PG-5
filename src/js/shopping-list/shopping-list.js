@@ -1,6 +1,17 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+import amazontabdesk1x from './img/shopping-list/amazon-tabl-desk-1x.png';
+import amazontabdesk2x from './img/shopping-list/amazon-tabl-desk-2x.png';
+import amazonmob1x from './img/shopping-list/amazon-mob-1x.png';
+import appletabdesk1x from './img/shopping-list/apple-books-tabl-desk-1x.png';
+import appletabdesk2x from './img/shopping-list/apple-books-tabl-desk-2x.png';
+import applemob1x from './img/shopping-list/apple-books-mob-1x.png';
+import sprite from './img/sprite.svg';
+import empytabdesk1x from './img/shopping-list/empy-books-tab-desk-1x.png';
+import empytabdesk2x from './img/shopping-list/empy-books-tab-desk-2x.png';
+import emptymob from './img/shopping-list/empty-books-mob.png';
+
 const shopTitle = document.querySelector('.shopping-list-title');
 
 function queryLocalStorage() {
@@ -32,11 +43,8 @@ function rendMarkup(elements) {
                   >
                     <img
                       class="shopping-listamazon-img"
-                      srcset="
-                        ./img/shopping-list/amazon-tabl-desk-1x.png 1x,
-                        ./img/shopping-list/amazon-tabl-desk-2x.png 2x
-                      "
-                      src="./img/shopping-list/amazon-mob-1x.png"
+                      srcset="${amazontabdesk1x} 1x, ${amazontabdesk2x} 2x"
+                      src="${amazonmob1x}"
                       alt="logoAmazon"
                       width="32"
                       height="11"
@@ -51,11 +59,8 @@ function rendMarkup(elements) {
                   >
                     <img
                       class="shopping-apple-img"
-                      srcset="
-                        ./img/shopping-list/apple-books-tabl-desk-1x.png 1x,
-                        ./img/shopping-list/apple-books-tabl-desk-2x.png 2x
-                      "
-                      src="./img/shopping-list/apple-books-mob-1x.png"
+                      srcset="${appletabdesk1x} 1x, ${appletabdesk2x} 2x"
+                      src="${applemob1x}"
                       alt="logo Apple books"
                       width="16"
                       height="16"
@@ -66,7 +71,7 @@ function rendMarkup(elements) {
             </div>
             <button type="button" class="shoppinglist-book-deletebutton">
               <svg class="shoppinglist-btn-svg" width="18" height="18">
-                <use href="./img/sprite.svg#icon-trash_bin"></use>
+                <use href="${sprite}#icon-trash_bin"></use>
               </svg>
             </button>
           </div>
@@ -91,12 +96,9 @@ function addEmptyMarkup() {
       This page is empty, add some books and proceed to order.
     </p>
     <img
-      srcset="
-        ./img/shopping-list/empy-books-tab-desk-1x.png 1x,
-        ./img/shopping-list/empy-books-tab-desk-2x.png 2x
-      "
+      srcset="${empytabdesk1x} 1x, ${empytabdesk2x} 2x"
       class="shopping-list-img"
-      src="./img/shopping-list/empty-books-mob.png"
+      src="${emptymob}"
       alt="a lot of books"
     />`;
   shopTitle.insertAdjacentHTML('afterend', emptyMarkup);
@@ -123,7 +125,7 @@ document.querySelector('.shopping-list').addEventListener('click', event => {
     const deleteElementLi = document.querySelector(`li[id="${bookId}"]`);
     deleteElementLi.remove();
   }
-  if (queryLocalStorage().length === 0) {
+  if (!queryLocalStorage() || queryLocalStorage().length === 0) {
     addEmptyMarkup();
   }
 });
