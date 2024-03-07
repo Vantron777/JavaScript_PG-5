@@ -258,7 +258,7 @@ input[type='checkbox']:checked ~ .check::after {
 }
 
 .burger-container {
-  background-image: url(../img/header-bg/Group\ 6@1x.png);
+  background-image: url(../img/header-bg/Group-6@1x.png);
   background-position: bottom;
   background-repeat: no-repeat;
   padding: 0;
@@ -271,7 +271,7 @@ input[type='checkbox']:checked ~ .check::after {
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .burger-container {
-    background-image: url(../img/header-bg/Group\ 6@2x.png);
+    background-image: url(../img/header-bg/Group-6@2x.png);
     background-size: contain;
   }
 }
