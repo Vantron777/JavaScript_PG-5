@@ -80,6 +80,10 @@ body {
   cursor: pointer;
 }
 
+.categories-itm:hover,
+.categories-itm:focus {
+  color: var(--purple-color);
+}
 .js-categories-current {
   font-weight: 700;
   font-size: 18px;
