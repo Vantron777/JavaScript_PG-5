@@ -31,7 +31,7 @@
   font-size: 32px;
   line-height: 1.1875;
   letter-spacing: -0.04em;
-  color: var(--purple-color);
+  color: #4f2ee8;
 }
 /* .shopinglist-cart {
 } */
@@ -170,7 +170,7 @@
   height: 28px;
   fill: #fff;
   cursor: pointer;
-  background-color: var(--purple-color);
+  background-color: #4f2ee8;
   border: none;
   border-radius: 50%;
   justify-content: center;
@@ -317,7 +317,7 @@
   font-size: 32px;
   line-height: 1.19;
   letter-spacing: -0.04em;
-  color: var(--purple-color);
+  color: #4f2ee8;
   padding: 0;
 }
 .shopping-list-text {
