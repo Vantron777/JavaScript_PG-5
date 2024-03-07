@@ -41,37 +41,37 @@ body.show-modal .backdrop {
   stroke: #4f2ee8;
 }
 
-.dark.amazon-icon {
+[data-theme='dark'][class='amazon-icon'] {
   filter: brightness(0) invert(1);
 }
 
-.dark.appbooks-icon {
+[data-theme='dark'][class='appbooks-icon'] {
   filter: grayscale(100%);
 }
 
-.dark.modal-icons:hover {
+[data-theme='dark'][class='modal-icons:hover'] {
   filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
-.dark.close-btn-icon {
-  stroke: #fff;
-  background-color: #000;
+[data-theme='dark'][class='close-btn-icon'] {
+  stroke: var(black-color);
+  background-color: var(white-color);
 }
 
-.dark.modal-message {
-  color: rgba(255, 255, 255, 0.5);
+[data-theme='dark'][class='modal-message'] {
+  color: var(categories-list-color);
 }
 
-.dark.modal-title {
-  color: #fff;
+[data-theme='dark'][class='modal-title'] {
+  color: var(white-color);
 }
 
-.dark.modal-description {
-  color: #fff;
+[data-theme='dark'][class='modal-description'] {
+  color: var(white-color);
 }
 
-.dark.modal-author {
-  color: #b4afaf;
+[data-theme='dark'][class='modal-author'] {
+  color: var(books-title-color);
 }
 
 @media (min-width: 375px) {
