@@ -23,7 +23,7 @@
   font-size: 32px;
   line-height: 1.1875;
   letter-spacing: -0.04em;
-  color: #111;
+  color: var(--black-color);
 }
 .shopping-list-title-span-books {
   font-family: 'DM Sans', sans-serif;
@@ -31,7 +31,7 @@
   font-size: 32px;
   line-height: 1.1875;
   letter-spacing: -0.04em;
-  color: #4f2ee8;
+  color: var(--purple-color);
 }
 /* .shopinglist-cart {
 } */
@@ -44,18 +44,17 @@
   display: flex;
 }
 .shoppinglist-book {
-  background: #fff;
-  border: 2px solid #4f2ee866;
+  background: var(--white-color);
+  border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   gap: 14px;
   padding: 14px;
   display: flex;
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
-/* .dark-shoppinglist-book {
-  background-color: #111;
-} */
+
 .shoppinglist-book-image {
   min-width: 100px;
   height: 142px;
@@ -74,7 +73,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #111;
+  color: var(--black-color);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
@@ -82,15 +81,13 @@
   overflow: hidden;
   font-family: 'DM Sans', sans-serif;
 }
-/* .dark-shoppinglist-book-title {
-  color: #fff;
-} */
+
 .shoppinglist-book-category {
   max-width: 156px;
   letter-spacing: 0.03em;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #b4afaf;
+  color: var(--books-title-color);
   margin-top: 4px;
   font-size: 12px;
   font-weight: 400;
@@ -108,7 +105,7 @@
   -webkit-line-clamp: 3;
   max-height: 3.9em;
   text-overflow: ellipsis;
-  color: #111;
+  color: var(--black-color);
   -webkit-box-orient: vertical;
   margin-top: 8px;
   font-size: 14px;
@@ -133,7 +130,7 @@
   letter-spacing: -0.04em;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #b4afaf;
+  color: var(--books-title-color);
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -173,7 +170,7 @@
   height: 28px;
   fill: #fff;
   cursor: pointer;
-  background-color: #4f2ee8;
+  background-color: var(--purple-color);
   border: none;
   border-radius: 50%;
   justify-content: center;
@@ -300,12 +297,10 @@
   padding-bottom: 40px;
   display: flex;
 }
-/* .dark-bg-color-section {
-  background-color: #202024;
-} */
+
 .shopping-list {
   width: 100%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 .shopping-list-title {
   font-family: 'DM Sans', sans-serif;
@@ -313,18 +308,16 @@
   font-size: 32px;
   line-height: 1.19;
   letter-spacing: -0.04em;
-  color: #111;
+  color: var(--black-color);
   margin-bottom: 120px;
 }
-/* .dark-shopping-list-title {
-  color: #fff;
-} */
+
 .shopping-list-title-span {
   font-family: 'DM Sans', sans-serif;
   font-size: 32px;
   line-height: 1.19;
   letter-spacing: -0.04em;
-  color: #4f2ee8;
+  color: var(--purple-color);
   padding: 0;
 }
 .shopping-list-text {
@@ -334,14 +327,11 @@
   line-height: 1.28571;
   letter-spacing: -0.02em;
   text-align: center;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--shopping-list-text);
   margin: 0 auto;
   margin-bottom: 14px;
   width: 244px;
 }
-/* .dark-shopping-list-text {
-  color: rgba(255, 255, 255, 0.6);
-} */
 .shopping-list-img {
   width: 265px;
   height: 198px;
