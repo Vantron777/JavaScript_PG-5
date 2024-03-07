@@ -39,7 +39,7 @@ export function createMarkup(obj) {
       </button>
       <p class="modal-message ${
         hasItem ? '' : 'hidden'
-      }">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
+      }">Congratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
         
       
       

@@ -7,11 +7,10 @@ import {
 
 const BASE_URL = 'https://books-backend.p.goit.global';
 
-
 export const getTopBooks = async booksPerRow => {
-     const endpoint = '/books/top-books/';
-    const fetchUrl = BASE_URL + endpoint;
-  
+  const endpoint = '/books/top-books/';
+  const fetchUrl = BASE_URL + endpoint;
+
   try {
     const response = await axios.get(fetchUrl);
     return renderTopBooks(response.data, booksPerRow);
@@ -29,7 +28,7 @@ export const getCategoryList = async () => {
     const response = await axios.get(fetchUrl);
     return renderCategoriesList(response.data);
   } catch (error) {
-   console.error('Error fetching category list:', error);
+    console.error('Error fetching category list:', error);
   }
 };
 

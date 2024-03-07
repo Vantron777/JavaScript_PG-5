@@ -8,7 +8,12 @@ let modalCloseBtn;
 
 backdropEl.addEventListener('click', onBackdropClick);
 
+// const bookId = '643282b1e85766588626a080'; // Здесь нужно указать реальный идентификатор книги
+// const bookInfo = await getBookInfo(bookId);
+// console.log(bookInfo);
+
 export async function openModal(bookId) {
+  console.log('Received bookId:', bookId); // Добавить эту строку
   const book = await getBookInfo(bookId);
   const markUp = createMarkup(book);
   modalElem.innerHTML = markUp;
@@ -20,18 +25,28 @@ export async function openModal(bookId) {
   modalCloseBtn.addEventListener('click', onCloseButtonClick);
   console.log(markUp);
 }
+// openModal('643282b1e85766588626a080');
+// function showModal() {
+//   document.body.classList.add('show-modal');
+//   window.addEventListener('keydown', onModalClose);
+// }
 function showModal() {
-  document.body.classList.add('show-modal');
+  backdropEl.classList.remove('remove-modal');
   window.addEventListener('keydown', onModalClose);
 }
 
+// function hideModal() {
+//   document.body.classList.remove('show-modal');
+//   window.removeEventListener('keydown', onModalClose);
+//   modalButton.removeEventListener('click', onModalButtonClick);
+//   modalCloseBtn.removeEventListener('click', onCloseButtonClick);
+// }
 function hideModal() {
-  document.body.classList.remove('show-modal');
+  backdropEl.classList.add('remove-modal');
   window.removeEventListener('keydown', onModalClose);
   modalButton.removeEventListener('click', onModalButtonClick);
   modalCloseBtn.removeEventListener('click', onCloseButtonClick);
 }
-
 function onModalButtonClick(e) {
   const LOCAL_STORAGE_KEY = 'addBook';
   addToShoppingList(e);

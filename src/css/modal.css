@@ -1,9 +1,10 @@
 body.show-modal {
   overflow: hidden;
 }
-
-body.show-modal .backdrop {
-  display: flex;
+.remove-modal {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .backdrop {
   width: 100vw;
@@ -12,12 +13,17 @@ body.show-modal .backdrop {
   top: 0;
   left: 0;
   background-color: #0000008b;
-  display: none;
+  /* display: none; */
   align-items: flex-start;
   justify-content: center;
   overflow: auto;
+  z-index: 999;
+  overflow: hidden;
 }
 
+body.show-modal .backdrop {
+  display: flex;
+}
 .modal-icons {
   filter: grayscale(100%);
   align-items: center;
