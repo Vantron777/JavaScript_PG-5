@@ -13,7 +13,7 @@ export function createMarkup(obj) {
         class="modal-close-btn modal-close-btn-js"
         type="button">
         <svg class="close-btn-icon" width="16" height="16">
-          <use href="${icons}#icon-x-close"></use>
+          <use href="${icons}#icon-x-close-black"></use>
           
         </svg>
       </button>
