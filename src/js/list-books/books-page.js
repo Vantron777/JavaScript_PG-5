@@ -5,7 +5,21 @@ import {
   getCategoryList,
   getBooksByCategory,
 } from './books-API.js';
-import { openModal } from "../shopping-list/modal.js";
+
+import { openModal } from '../shopping-list/modal.js';
+
+document.addEventListener('DOMContentLoaded', async function () {
+  const bookItems = document.querySelectorAll('.books-box-itm');
+
+  bookItems.forEach(bookItem => {
+    bookItem.addEventListener('click', () => {
+      const bookId = bookItem.id;
+      console.log('Click');
+      openModal(bookId);
+    });
+  });
+});
+
 //function determine Books PerRow
 const BOOKS_PER_ROW_MAP = {
   default: 3,
@@ -33,12 +47,12 @@ window.addEventListener('resize', () => {
 
 //function show category
 async function displayCategories() {
-//   showLoader();
+  //   showLoader();
   const categoriesContainer = document.querySelector('.categories-list');
   const renderedCategories = await getCategoryList();
   categoriesContainer.innerHTML = renderedCategories;
   categoriesContainer.addEventListener('click', handleCategoryClick);
-//   hideLoader();
+  //   hideLoader();
   return categoriesContainer;
 }
 
@@ -55,8 +69,8 @@ async function handleCategoryClick(e) {
 
   const categoriesContainer = await displayCategories();
   updateCategoryClasses(categoriesContainer, catName);
-// showLoader();
-  
+  // showLoader();
+
   if (catName === 'all categories') {
     displayTopBooks();
   } else {
@@ -69,7 +83,7 @@ document.addEventListener('click', handleSeeMoreClick);
 async function handleSeeMoreClick(event) {
   if (event.target && event.target.classList.contains('books-btn-see-more')) {
     const catName = event.target.dataset.categoryname;
-//   showLoader(); 
+    //   showLoader();
     await displayBooksByCategory(null, catName);
 
     window.scrollTo({
@@ -84,16 +98,16 @@ async function handleSeeMoreClick(event) {
 
 // show books by category
 async function displayBooksByCategory(categoriesContainer, catName) {
-//   showLoader();
+  //   showLoader();
   try {
     const booksContainer = document.querySelector('.books-box');
     if (!booksContainer) {
       console.error('Element not found.');
       return;
     }
-      const renderedBooks = await getBooksByCategory(catName);
-     booksContainer.innerHTML = renderedBooks;
-    
+    const renderedBooks = await getBooksByCategory(catName);
+    booksContainer.innerHTML = renderedBooks;
+
     // console.log(renderedBooks);
   } catch (error) {
     console.error('Error displaying books by category:', error);
@@ -107,20 +121,18 @@ async function displayTopBooks() {
   try {
     // showLoader();
     const topBooksContainer = document.querySelector('.books-box');
-     const newWindowWidth = window.innerWidth;
-      ctrlBreikpoint = determineBooksPerRow(newWindowWidth);
+    const newWindowWidth = window.innerWidth;
+    ctrlBreikpoint = determineBooksPerRow(newWindowWidth);
     const booksPerRow = ctrlBreikpoint;
     const renderedBooks = await getTopBooks(booksPerRow);
 
     topBooksContainer.innerHTML = renderedBooks;
-    
   } catch (error) {
     console.error('Error displaying top books:', error);
   } finally {
     // hideLoader();
   }
 }
-
 
 window.addEventListener('load', () => {
   displayTopBooks();
@@ -140,23 +152,53 @@ function updateCategoryClasses(categoriesContainer, catName) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', async function () {
-  const bookItems = document.querySelectorAll('.books-box-list');
-  console.log(bookItems);
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('books-overlay-text')) {
+    const bookId = event.target.dataset.id;
+    console.log('Click');
+    openModal(bookId);
+  }
+});
 
-   bookItems.forEach(bookItem => {
-    console.log(bookItem);
-    if (bookItem.classList.contains('.books-box-itm')) {
+document.addEventListener('DOMContentLoaded', async function () {
+  // Добавьте код, который добавляет обработчик клика на элементы книг при их появлении в DOM
+  const addClickListenerToBooks = () => {
+    const bookItems = document.querySelectorAll('.books-box-itm');
+    bookItems.forEach(bookItem => {
       bookItem.addEventListener('click', () => {
         const bookId = bookItem.id;
         console.log('Click');
         openModal(bookId);
       });
-    } else {
-      console.error('Error: Element does not have class "books-box-itm"');
-    }
-  });
+    });
+  };
+
+  // Проверяем, что книги уже доступны в DOM
+  if (
+    document.readyState === 'complete' ||
+    document.readyState === 'interactive'
+  ) {
+    addClickListenerToBooks();
+  } else {
+    // Если DOM еще не загружен полностью, добавляем обработчик на событие DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', addClickListenerToBooks);
+  }
 });
 
+// document.addEventListener('DOMContentLoaded', async function () {
+//   const bookItems = document.querySelectorAll('.books-box-list');
+//   console.log(bookItems);
 
-
+//   bookItems.forEach(bookItem => {
+//     console.log(bookItem);
+//     if (bookItem.classList.contains('.books-box-itm')) {
+//       bookItem.addEventListener('click', () => {
+//         const bookId = bookItem.id;
+//         console.log('Click');
+//         openModal(bookId);
+//       });
+//     } else {
+//       console.error('Error: Element does not have class "books-box-itm"');
+//     }
+//   });
+// });
