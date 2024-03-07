@@ -11,47 +11,56 @@ const charities = [
     {
         title: 'Save the Children',
         url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-        img: './img/save-the-children@2x.png',
+    img: '../img/support/save-the-children.png',
+    resolution: '../img/support/save-the-children@2x.png',
     },
     {
         title: 'Project HOPE',
         url: 'https://www.projecthope.org/country/ukraine/',
-        img: './img/project-hope@2x.png',
+      img: '../img/support/project-hope.png',
+        resolution: '../img/support/project-hope@2x.png',
     },
     {
         title: 'UNITED24',
         url: 'https://u24.gov.ua/uk',
-        img: './img/united24@2x.png',
+      img: '../img/support/united.png',
+        resolution: '../img/support/united24@2x.png',
     },
     {
         title: 'International Medical Corps',
         url: 'https://internationalmedicalcorps.org/country/ukraine/',
-        img: './img/international-medical-corps@2x.png',
+      img: '../img/support/international-medical-corps.png',
+        resolution: '../img/support/international-medical-corps@2x.png',
     },
     {
         title: 'Medicins Sans Frontieres',
         url: 'https://www.msf.org/ukraine',
-        img: './img/medicins-sans-frontieres@2x.png',
+      img: '../img/support/medicins-sans-frontieres.png',
+        resolution: '../img/support/medicins-sans-frontieres@2x.png',
     },
     {
         title: 'RAZOM',
         url: 'https://www.razomforukraine.org/',
-        img: './img/razom@2x.png',
+      img: '../img/support/razom.png',
+        resolution: '../img/support/razom@2x.png',
     },
     {
         title: 'Action against hunger',
         url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-        img: './img/action-against-hunger@2x.png',
+      img: '../img/support/action-ageinst-hunger.png',
+        resolution: '../img/support/action-against-hunger@2x.png',
     },
     {
         title: 'World vision',
         url: 'https://www.wvi.org/emergencies/ukraine',
-        img: './img/world-vision@2x.png',
+      img: '../img/support/world-vision.png',
+        resolution: '../img/support/world-vision@2x.png',
     },
     {
         title: 'Serhiy Prytula Charity Foundation',
         url: 'https://prytulafoundation.org/en',
-        img: './img/serhiy-prytula-charity-foundation@2x.png',
+      img: '../img/support/sergiy-prytula.png',
+        resolution: '../img/support/serhiy-prytula-charity-foundation@2x.png',
     },
 ];
 
@@ -75,7 +84,7 @@ function createListItem(charity) {
 
     const img = document.createElement('img');
     img.classList.add('img-s');
-    img.src = charity.img;
+    img.setAttribute('srcset', `${charity.img}, ${charity.resolution} 2x`);
     img.alt = charity.title;
 
     link.appendChild(img);
