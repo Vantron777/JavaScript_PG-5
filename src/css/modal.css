@@ -35,7 +35,7 @@ body.show-modal .backdrop {
 
 .amazon-icon {
   width: 62px;
-  height: 30px;
+  height: 19px;
 }
 
 .close-btn-icon {
@@ -56,18 +56,6 @@ body.show-modal .backdrop {
 .appbooks-icon:hover,
 .amazon-icon:hover {
   filter: var(--color-icon-am-hov);
-}
-
-@media (min-width: 375px) {
-  /* .container {
-    max-width: 375px;
-  } */
-}
-
-@media (min-width: 1440px) {
-  /* .container {
-    max-width: 1440px;
-  } */
 }
 
 /*-------------------------Mobile--------------------------*/
