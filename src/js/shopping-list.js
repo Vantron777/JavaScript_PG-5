@@ -119,9 +119,8 @@ function removeEmptyMarkup() {
 document.querySelector('.shopping-list').addEventListener('click', event => {
   if (event.target.nodeName == 'BUTTON') {
     const bookId = event.target.closest('li').getAttribute('id');
-    console.log(bookId);
     const newArray = queryLocalStorage().filter(obj => obj._id !== bookId);
-    addtoLS(newArray);
+    localStorage.setItem('addBook', JSON.stringify(newArray));
     const deleteElementLi = document.querySelector(`li[id="${bookId}"]`);
     deleteElementLi.remove();
   }
