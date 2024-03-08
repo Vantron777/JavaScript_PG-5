@@ -1,4 +1,11 @@
 import icons from '../../img/sprite.svg';
+import amazontabdesk1x from '../img/shopping-list/amazon-tabl-desk-1x.png';
+import amazontabdesk2x from '../img/shopping-list/amazon-tabl-desk-2x.png';
+import amazonmob1x from '../img/shopping-list/amazon-mob-1x.png';
+import appletabdesk1x from '../img/shopping-list/apple-books-tabl-desk-1x.png';
+import appletabdesk2x from '../img/shopping-list/apple-books-tabl-desk-2x.png';
+import applemob1x from '../img/shopping-list/apple-books-mob-1x.png';
+
 const LOCAL_STORAGE_KEY = 'addBook';
 
 export function createMarkup(obj) {
@@ -67,13 +74,11 @@ function linksTemplate(links) {
           storeNames.amazon
             ? `<li class="marketplace-list-item">
               <a href="${storeNames.amazon}" >
-                <img
+                
+                  <img
                       class="modal-icons amazon-icon"
-                      srcset="
-                        ./img/shopping-list/amazon-tabl-desk-1x.png 1x,
-                        ./img/shopping-list/amazon-tabl-desk-2x.png 2x
-                      "
-                      src="./img/shopping-list/amazon-mob-1x.png"
+                      srcset="${amazontabdesk1x} 1x, ${amazontabdesk2x} 2x"
+                      src="${amazonmob1x}"
                       alt="logoAmazon"
                       width="62"
                       height="19"
@@ -86,13 +91,11 @@ function linksTemplate(links) {
           storeNames.appleBooks
             ? `<li class="marketplace-list-item">
               <a href="${storeNames.appleBooks}" >
-              <img
+              
+                    <img
                       class="modal-icons appbooks-icon"
-                      srcset="
-                        ./img/shopping-list/apple-books-tabl-desk-1x.png 1x,
-                        ./img/shopping-list/apple-books-tabl-desk-2x.png 2x
-                      "
-                      src="./img/shopping-list/apple-books-mob-1x.png"
+                      srcset="${appletabdesk1x} 1x, ${appletabdesk2x} 2x"
+                      src="${applemob1x}"
                       alt="logo Apple books"
                       width="33"
                       height="32"
