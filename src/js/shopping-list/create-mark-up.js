@@ -1,10 +1,10 @@
 import icons from '../../img/sprite.svg';
-import amazontabdesk1x from '../img/shopping-list/amazon-tabl-desk-1x.png';
-import amazontabdesk2x from '../img/shopping-list/amazon-tabl-desk-2x.png';
-import amazonmob1x from '../img/shopping-list/amazon-mob-1x.png';
-import appletabdesk1x from '../img/shopping-list/apple-books-tabl-desk-1x.png';
-import appletabdesk2x from '../img/shopping-list/apple-books-tabl-desk-2x.png';
-import applemob1x from '../img/shopping-list/apple-books-mob-1x.png';
+import amazontabdesk1x from '../../img/shopping-list/amazon-tabl-desk-1x.png';
+import amazontabdesk2x from '../../img/shopping-list/amazon-tabl-desk-2x.png';
+import amazonmob1x from '../../img/shopping-list/amazon-mob-1x.png';
+import appletabdesk1x from '../../img/shopping-list/apple-books-tabl-desk-1x.png';
+import appletabdesk2x from '../../img/shopping-list/apple-books-tabl-desk-2x.png';
+import applemob1x from '../../img/shopping-list/apple-books-mob-1x.png';
 
 const LOCAL_STORAGE_KEY = 'addBook';
 
