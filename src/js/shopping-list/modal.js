@@ -8,12 +8,12 @@ let modalCloseBtn;
 
 backdropEl.addEventListener('click', onBackdropClick);
 
-// const bookId = '643282b1e85766588626a080'; // Здесь нужно указать реальный идентификатор книги
+// const bookId = '643282b1e85766588626a080';
 // const bookInfo = await getBookInfo(bookId);
 // console.log(bookInfo);
 
 export async function openModal(bookId) {
-  console.log('Received bookId:', bookId); // Добавить эту строку
+  console.log('Received bookId:', bookId);
   const book = await getBookInfo(bookId);
   const markUp = createMarkup(book);
   modalElem.innerHTML = markUp;
