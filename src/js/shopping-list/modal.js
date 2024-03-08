@@ -32,6 +32,7 @@ export async function openModal(bookId) {
 // }
 function showModal() {
   backdropEl.classList.remove('remove-modal');
+  document.body.classList.add('show-modal');
   window.addEventListener('keydown', onModalClose);
 }
 
@@ -43,6 +44,8 @@ function showModal() {
 // }
 function hideModal() {
   backdropEl.classList.add('remove-modal');
+  document.body.classList.remove('show-modal');
+  window.removeEventListener('keydown', onModalClose);
   window.removeEventListener('keydown', onModalClose);
   modalButton.removeEventListener('click', onModalButtonClick);
   modalCloseBtn.removeEventListener('click', onCloseButtonClick);

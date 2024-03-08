@@ -49,7 +49,6 @@ export const renderTopBooks = (data, booksPerRow) => {
   }
 };
 
-
 export const renderCategoriesList = data => {
   const categoriesItems = data
     .sort((a, b) => {

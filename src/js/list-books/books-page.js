@@ -161,7 +161,6 @@ document.addEventListener('click', function (event) {
 });
 
 document.addEventListener('DOMContentLoaded', async function () {
-  // Добавьте код, который добавляет обработчик клика на элементы книг при их появлении в DOM
   const addClickListenerToBooks = () => {
     const bookItems = document.querySelectorAll('.books-box-itm');
     bookItems.forEach(bookItem => {
@@ -173,32 +172,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
   };
 
-  // Проверяем, что книги уже доступны в DOM
   if (
     document.readyState === 'complete' ||
     document.readyState === 'interactive'
   ) {
     addClickListenerToBooks();
   } else {
-    // Если DOM еще не загружен полностью, добавляем обработчик на событие DOMContentLoaded
     document.addEventListener('DOMContentLoaded', addClickListenerToBooks);
   }
 });
-
-// document.addEventListener('DOMContentLoaded', async function () {
-//   const bookItems = document.querySelectorAll('.books-box-list');
-//   console.log(bookItems);
-
-//   bookItems.forEach(bookItem => {
-//     console.log(bookItem);
-//     if (bookItem.classList.contains('.books-box-itm')) {
-//       bookItem.addEventListener('click', () => {
-//         const bookId = bookItem.id;
-//         console.log('Click');
-//         openModal(bookId);
-//       });
-//     } else {
-//       console.error('Error: Element does not have class "books-box-itm"');
-//     }
-//   });
-// });

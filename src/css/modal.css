@@ -39,69 +39,47 @@ body.show-modal .backdrop {
 }
 
 .close-btn-icon {
-  stroke: #000;
-  background-color: #fff;
+  stroke: var(--black-color);
+  background-color: var(--body-bg-color);
 }
 
 .close-btn-icon:hover {
   stroke: #4f2ee8;
 }
 
-[data-theme='dark'][class='amazon-icon'] {
-  filter: brightness(0) invert(1);
+.amazon-icon {
+  filter: var(--color-icon-amazon);
 }
-
-[data-theme='dark'][class='appbooks-icon'] {
-  filter: grayscale(100%);
+.appbooks-icon {
+  filter: var(--color-icon-apple);
 }
-
-[data-theme='dark'][class='modal-icons:hover'] {
-  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-}
-
-[data-theme='dark'][class='close-btn-icon'] {
-  stroke: var(black-color);
-  background-color: var(white-color);
-}
-
-[data-theme='dark'][class='modal-message'] {
-  color: var(categories-list-color);
-}
-
-[data-theme='dark'][class='modal-title'] {
-  color: var(white-color);
-}
-
-[data-theme='dark'][class='modal-description'] {
-  color: var(white-color);
-}
-
-[data-theme='dark'][class='modal-author'] {
-  color: var(books-title-color);
+.appbooks-icon:hover,
+.amazon-icon:hover {
+  filter: var(--color-icon-am-hov);
 }
 
 @media (min-width: 375px) {
-  .container {
+  /* .container {
     max-width: 375px;
-  }
+  } */
 }
 
 @media (min-width: 1440px) {
-  .container {
+  /* .container {
     max-width: 1440px;
-  }
+  } */
 }
 
 /*-------------------------Mobile--------------------------*/
 @media (min-width: 375px) {
   .modal-w {
-    border: 2px solid #000;
+    border: 2px solid var(--black-color);
     border-radius: 18px;
     width: 336px;
     position: relative;
-    background: #fff;
     margin: 70px 15px 30px;
     padding: 40px 25px;
+    background-color: var(--body-bg-color);
   }
 
   .modal-img {
@@ -113,7 +91,7 @@ body.show-modal .backdrop {
     font-weight: 700;
     line-height: 1.12;
     letter-spacing: -0.04em;
-    color: #111;
+    color: var(--black-color);
     text-transform: uppercase;
     margin-top: 14px;
   }
@@ -129,7 +107,7 @@ body.show-modal .backdrop {
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: -0.04em;
-    color: #111;
+    color: var(--black-color);
     margin-top: 18px;
   }
 
@@ -161,14 +139,14 @@ body.show-modal .backdrop {
     line-height: 1.28;
     letter-spacing: -0.01em;
     text-transform: uppercase;
-    color: #111;
+    color: var(--black-color);
     text-align: center;
     cursor: pointer;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
     display: flex;
-    background: #fff;
+    background: var(--body-bg-color);
   }
 
   .modal-button-shopping-list:hover,
@@ -182,7 +160,7 @@ body.show-modal .backdrop {
     line-height: 1.2;
     letter-spacing: -0.04em;
     text-align: center;
-    color: rgba(17, 17, 17, 0.5);
+    color: var(--disactive-link-color);
     width: 242px;
     margin-top: 8px;
   }
@@ -208,17 +186,16 @@ body.show-modal .backdrop {
   }
 }
 
-/*-------------------------Desktop-------------------------*/
+/*--------------Tablet--Desktop-------------------------*/
 
-@media (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .modal-w {
-    border: 2px solid #000;
+    border: 2px solid var(--black-color);
     border-radius: 18px;
     width: 579px;
     height: 501px;
     padding: 40px 40px 40px;
     position: relative;
-    background: #fff;
   }
 
   .modal-close-btn {
