@@ -9,7 +9,8 @@ import './js/shopping-list/create-mark-up';
 import './js/shopping-list/modal';
 import './js/shopping-list/shop-ls-function';
 import './js/shopping-list/shopping-list-btn';
+import './js/support';
 import './js/shopping-list';
 import './js/loader';
-import './js/support';
+
 import './js/topBtn';

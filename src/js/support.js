@@ -160,16 +160,12 @@
 //     const scrollDirection = wrapper.scrollTop <= 0 ? 'down' : 'up';
 
 //     if (scrollDirection === 'down') {
-
 //         if (wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight) {
-
 //             wrapper.scrollTop -= 3 * document.querySelector('.swiper-slide').offsetHeight;
 //         } else {
-
 //             wrapper.scrollTop += 3 * document.querySelector('.swiper-slide').offsetHeight;
 //         }
 //     } else {
-
 //         if (wrapper.scrollTop <= 0) {
 //             wrapper.scrollTop += 3 * document.querySelector('.swiper-slide').offsetHeight;
 //         } else {
@@ -279,7 +275,7 @@ swiperContainer.appendChild(swiperWrapper);
 
 parentElement.appendChild(swiperContainer);
 
-// Тепер ми можемо додати кнопку і встановити для неї обробник подій
+// Створюємо  кнопку 
 
 const buttonDownContainer = document.createElement('div');
 buttonDownContainer.classList.add('button-con');
