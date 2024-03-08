@@ -3,11 +3,15 @@
 .shopsupport {
   display: flex;
   gap: 40px;
+  padding: 40px 24px;
 }
 .support-div {
+  display: none;
+}
+/* .support-div {
   width: 356px;
   margin-top: 40px;
-}
+} */
 .books {
   display: flex;
   flex-direction: column;
@@ -24,7 +28,7 @@
   display: flex;
 }
 .shopping-list {
-  width: 100%;
+  width: 335px;
 }
 .shopping-list-title-books {
   font-family: 'DM Sans', sans-serif;
@@ -160,6 +164,7 @@
 .shopping-listamazon-img {
   width: 32px;
   height: 11px;
+  filter: var(--color-icon-amazon);
 }
 /* .dark-shopping-list-img {
   background-color: #fff;
@@ -171,8 +176,12 @@
 .shopping-apple-img {
   width: 16px;
   height: 16px;
+  filter: var(--color-icon-apple);
 }
-
+.shopping-listamazon-img:hover,
+.shopping-apple-img:hover {
+  filter: var(--color-icon-am-hov);
+}
 .shoppinglist-book-deletebutton {
   z-index: 10;
   width: 28px;
@@ -207,6 +216,9 @@
   }
   .shoplist-container {
     margin-top: 0;
+  }
+  .shopping-list {
+    width: 704px;
   }
   .shopping-list-title {
     font-size: 48px;
@@ -264,7 +276,10 @@
 
 /* ===================from 1024px==================================== */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
+  .support-div {
+    display: block;
+  }
   .shoplist-container {
     gap: 40px;
   }
@@ -306,16 +321,17 @@
   padding: 40px 20px 80px;
 }
 
-.shopping-list-container {
+.shopping-list-box {
   align-items: flex-start;
   padding-bottom: 40px;
   display: flex;
 }
 
-.shopping-list {
+/* .shopping-list {
   width: 100%;
-  /* border: 2px solid black; */
-}
+  border: 2px solid black;
+} */
+
 .shopping-list-title {
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
@@ -323,7 +339,7 @@
   line-height: 1.19;
   letter-spacing: -0.04em;
   color: var(--black-color);
-  margin-bottom: 120px;
+  margin-bottom: 40px;
 }
 
 .shopping-list-title-span {
@@ -344,6 +360,7 @@
   color: var(--shopping-list-text);
   margin: 0 auto;
   margin-bottom: 14px;
+  margin-top: 80px;
   width: 244px;
 }
 .shopping-list-img {
@@ -363,7 +380,7 @@
     font-size: 48px;
     line-height: 1.08333;
     letter-spacing: -0.04em;
-    margin-bottom: 140px;
+    margin-bottom: 40px;
   }
 
   .shopping-list-title-span {
@@ -377,6 +394,7 @@
     line-height: 1.33333;
     letter-spacing: -0.02em;
     margin-bottom: 20px;
+    margin-top: 100px;
   }
   .shopping-list-img {
     width: 322px;
@@ -386,8 +404,8 @@
 
 /* from 1280px */
 
-@media screen and (min-width: 1394px) {
-  .container {
+@media screen and (min-width: 1440px) {
+  /* .container {
     min-width: 1394px;
-  }
+  } */
 }
